@@ -1,0 +1,32 @@
+#Guessing game in Python 
+#In this game, a random number between 1 and 80 is generated using the randint function. The player has to guess the number, and the program provides hints if
+# the guess is too high or too low. The game continues until the player guesses the correct number. After each game, the player can choose to play again or exit.
+
+print("Welcome to the Guessing game !!")
+print("I am thinking of a number between 1 to 80. Can you guess what it is?")
+import random
+def guessing_game():
+  random.randint(1,80)
+  jackpot=random.randint(1,80)
+  guess = int(input("Chal guess kar:"))
+  counter = 1
+  while guess !=jackpot:
+     if guess < jackpot:
+        print("Guess higher")
+     else:
+        print("Guess lower")
+     guess = int(input("Chal guess kar:"))
+     counter += 1
+  print("SAHI JAWAB")
+  print("You took",counter,"attempts")
+
+  play_again = input("Do you want to play again? (yes/no):")
+  if play_again.lower() == 'yes':
+     print("Lets play again!")
+     guessing_game()
+  else:
+    print("Thanks for playing!")
+guessing_game()
+    
+
+  
